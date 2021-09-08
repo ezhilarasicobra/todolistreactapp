@@ -30,7 +30,7 @@ function App() {
   };
   let Handlechange = async(e,id) => {
     try {
-     let updatedata= await axios.put(`http://localhost:3000/updatetask/${id}`,{status:e.target.checked})
+     let updatedata= await axios.put(`https://dolistapplication.herokuapp.com/${id}`,{status:e.target.checked})
      fetchdata();
 
     } catch (error) {
@@ -39,7 +39,7 @@ function App() {
   };
 let handledelete=async (id)=>{
 try {
-  let postdeletedata=await axios.delete(`http://localhost:3000/deletetask/${id}`)
+  let postdeletedata=await axios.delete(`https://dolistapplication.herokuapp.com/${id}`)
 fetchdata();
 } catch (error) {
   alert(error)
