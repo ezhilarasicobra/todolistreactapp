@@ -7,7 +7,7 @@ function App() {
   const [task, setTask] = useState("");
   let fetchdata = async () => {
     try {
-      const todolistdata = await axios.get("http://localhost:3000/products");
+      const todolistdata = await axios.get("https://dolistapplication.herokuapp.com/products");
       setTodolist([...todolistdata.data]);
     } catch (error) {
       console.log(error);
@@ -19,7 +19,7 @@ function App() {
   }, []);
   let handlecreatetask = async () => {
     try {
-      let postdata = await axios.post("http://localhost:3000/createtask", {
+      let postdata = await axios.post("https://dolistapplication.herokuapp.com/createtask", {
         tasks: task,
       });
       fetchdata();
